@@ -20,6 +20,6 @@ sudo apt-get install -y r-base r-base-dev
 
 sudo apt-get install -y htop ranger python-pip git tig emacs-nox pandoc ed
 
-sudo Rscript -e "install.packages(c('data.table', 'tictoc', 'glue', 'dplyr', 'purrr', 'tidyr', 'stringr', 'readr', 'ggplot2', 'simTool', 'caret', 'car', 'furrr', 'testthat', 'funModeling', 'klaR', 'rBayesianOptimization', 'SmartEDA', 'rmarkdown', 'knitr', 'DT', 'skimr', 'xgboost'), repos = 'https://ftp.gwdg.de/pub/misc/cran/', Ncpus = 8)"
+sudo Rscript ./libs.R
 
 
