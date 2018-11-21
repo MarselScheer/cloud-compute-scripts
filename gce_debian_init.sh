@@ -19,7 +19,8 @@ sudo apt-get install -y r-base r-base-dev
 
 
 sudo apt-get install -y htop ranger python-pip git tig emacs-nox pandoc ed
+echo "export EDITOR=emacs" >> ~/.bashrc
 
 sudo Rscript ./libs.R
 
-
+echo "execute: source ~/.bashrc"
