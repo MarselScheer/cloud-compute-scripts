@@ -8,3 +8,8 @@
 ![rules](./firewall_rules.png)
 ## Add a network tag
 ![rstudio](./allow-rstudio.png)
+
+# Clone
+```
+git clone https://github.com/MarselScheer/cloud-compute-scripts
+```
