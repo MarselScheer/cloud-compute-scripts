@@ -20,4 +20,16 @@ sudo chown m:m /usr/local/gce
 sudo useradd -m gce
 sudo passwd gce
 
+
+source ./GIT_CONFIG
+echo ""
+echo "Set git user and email to for user -gce-:"
+echo $GIT_NAME
+echo $GIT_EMAIL
+sudo su -c "git config --global user.name $GIT_NAME" gce
+sudo su -c "git config --global user.email $GIT_EMAIL" gce
+
+
+echo ""
 echo "Login to RStudio with username -gce-"
+echo ""
