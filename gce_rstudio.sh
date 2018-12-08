@@ -17,6 +17,9 @@ sudo gdebi -n $RSTUDIO
 sudo useradd -m gce
 sudo passwd gce
 
+sudo su -c "mkdir /home/gce/projects" gce
+
+
 source ./GIT_CONFIG
 echo ""
 echo "Set git user and email to for user -gce-:"
