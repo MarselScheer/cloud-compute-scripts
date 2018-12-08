@@ -18,16 +18,19 @@ sudo useradd -m gce
 sudo passwd gce
 
 sudo su -c "mkdir /home/gce/projects" gce
+echo "-------------------------------------"
+echo "create a projects-folder for gce. Use rsync for downloading:"
+echo "rsync --dry-run --exclude 'foo' --exclude 'bar' -avrz -e ssh m@<IP>:/home/gce/projects /<DEST>"
 
 
 source ./GIT_CONFIG
-echo ""
-echo "Set git user and email to for user -gce-:"
+echo "-------------------------------------"
+echo "Set git user and email for user -gce- to:"
 echo $GIT_NAME
 echo $GIT_EMAIL
 sudo su -c "git config --global user.name $GIT_NAME" gce
 sudo su -c "git config --global user.email $GIT_EMAIL" gce
-
+echo "-------------------------------------"
 
 echo ""
 echo "Login to RStudio with username -gce-"
