@@ -1,0 +1,5 @@
+#!/bin/bash
+
+GIT_NAME="m"
+GIT_EMAIL="scheer@freescience.de"
+
