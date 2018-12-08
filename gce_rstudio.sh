@@ -4,11 +4,11 @@
 
 # check www.rstudio.com/products/rstudio/download-server/ for newer versions
 
-rstudio=rstudio-server-stretch-1.1.463-amd64.deb
+RSTUDIO=rstudio-server-stretch-1.1.463-amd64.deb
 
 sudo apt-get install -y gdebi-core 
-wget https://download2.rstudio.org/$rstudio
-sudo gdebi -n $rstudio
+wget https://download2.rstudio.org/$RSTUDIO
+sudo gdebi -n $RSTUDIO
 
 #sudo echo 'server-app-armor-enabled=0' >> /etc/rstudio/rserver.conf
 #sudo rstudio-server verify-installation
