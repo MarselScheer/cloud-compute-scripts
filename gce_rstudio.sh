@@ -14,12 +14,8 @@ sudo gdebi -n $RSTUDIO
 #sudo rstudio-server verify-installation
 #sudo rstudio-server start
 
-sudo mkdir /usr/local/gce
-sudo chown m:m /usr/local/gce
-
 sudo useradd -m gce
 sudo passwd gce
-
 
 source ./GIT_CONFIG
 echo ""
