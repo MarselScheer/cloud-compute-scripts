@@ -4,8 +4,8 @@ if (!require(pacman)) {
 
 cran_pkg <- c('car', 'caret', 'corrplot', 'corrr', 'data.table', 'dplyr', 'drake', 'DT', 'embed',
     'funModeling', 'furrr', 'futile.logger', 'ggplot2', 'glue', 'klaR', 'knitr', 'MLmetrics', 'partykit', 'purrr',
-    'rBayesianOptimization', 'readr', 'recipes', 'rmarkdown', 'rsample', 'simTool',
-    'skimr', 'SmartEDA', 'stringr', 'testthat', 'tictoc', 'tidyr', 'vtreat', 'visNetwork', 'xgboost')
+    'randomForest', 'rBayesianOptimization', 'readr', 'recipes', 'rmarkdown', 'rsample', 'simTool',
+    'skimr', 'SmartEDA', 'stringr', 'testthat', 'tictoc', 'tidyr', 'txtq', 'vtreat', 'visNetwork', 'xgboost')
 
 pkg_installed <- sapply(cran_pkg, pacman::p_exists, local = TRUE)
 
