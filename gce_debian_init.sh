@@ -18,7 +18,7 @@ sudo apt-key adv --keyserver keys.gnupg.net --recv-key 'E19F5F87128899B192B1A2C2
 sudo apt-get update
 sudo apt-get install -y r-base r-base-dev
 
-sudo apt-get install -y htop ranger python-pip git tig emacs-nox pandoc ed
+sudo apt-get install -y htop ranger python-pip git tig emacs-nox pandoc ed ncdu
 echo "export EDITOR=emacs" >> ~/.bashrc
 
 sudo Rscript ./libs.R
