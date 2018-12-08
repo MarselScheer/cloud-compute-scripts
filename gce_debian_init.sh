@@ -3,6 +3,8 @@
 # Prepares an *Debian 9 + TF1-9* image on google cloud platform for R
 
 export LANG=en_US.UTF-8
+GIT_NAME="m"
+GIT_EMAIL="scheer@freescience.de"
 
 sudo ln -sf /usr/share/zoneinfo/GMT /etc/localtime
 
@@ -16,8 +18,8 @@ sudo apt-get install dirmngr libcurl4-openssl-dev libssl-dev
 sudo apt-key adv --keyserver keys.gnupg.net --recv-key 'E19F5F87128899B192B1A2C2AD5F960A256A04AF'
 sudo apt-get update
 sudo apt-get install -y r-base r-base-dev
-git config --global user.name "Marsel Scheer"
-git config --global user.email "scheer@freescience.de"
+git config --global user.name $GIT_NAME
+git config --global user.email $GIT_EMAIL
 
 sudo apt-get install -y htop ranger python-pip git tig emacs-nox pandoc ed
 echo "export EDITOR=emacs" >> ~/.bashrc
