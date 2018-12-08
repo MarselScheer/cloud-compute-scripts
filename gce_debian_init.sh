@@ -16,7 +16,8 @@ sudo apt-get install dirmngr libcurl4-openssl-dev libssl-dev
 sudo apt-key adv --keyserver keys.gnupg.net --recv-key 'E19F5F87128899B192B1A2C2AD5F960A256A04AF'
 sudo apt-get update
 sudo apt-get install -y r-base r-base-dev
-
+git config --global user.name "Marsel Scheer"
+git config --global user.email "scheer@freescience.de"
 
 sudo apt-get install -y htop ranger python-pip git tig emacs-nox pandoc ed
 echo "export EDITOR=emacs" >> ~/.bashrc
