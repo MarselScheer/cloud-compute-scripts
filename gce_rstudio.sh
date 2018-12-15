@@ -20,7 +20,10 @@ sudo passwd gce
 sudo su -c "mkdir /home/gce/projects" gce
 echo "-------------------------------------"
 echo "create a projects-folder for gce. Use rsync for downloading:"
-echo "rsync --dry-run --exclude 'foo' --exclude 'bar' -avrz -e ssh m@<IP>:/home/gce/projects /<DEST>"
+echo "rsync --dry-run --exclude 'foo' --exclude 'bar' -avrzhe ssh m@<IP>:/home/gce/projects /<DEST>"
+echo ""
+echo "in order to upload to /home/gce/projects add a public key to /home/gce/.ssh/authorized_keys and then"
+echo "rsync --dry-run --exclude 'foo' --exclude 'bar' -avrzhe ssh /<SRC> gce@<IP>:/home/gce/projects/ "
 
 
 source ./GIT_CONFIG
