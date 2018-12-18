@@ -38,3 +38,9 @@ echo "-------------------------------------"
 echo ""
 echo "Login to RStudio with username -gce-"
 echo ""
+
+echo "----------------------------------------"
+echo "Start installing R-libs with heavy dependencies in 30 seconds"
+sleep 30
+sudo Rscript ./libs_with_heavy_deps.R
+

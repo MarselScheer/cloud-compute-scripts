@@ -2,7 +2,7 @@ if (!require(pacman)) {
   install.packages('pacman', repos = 'https://ftp.gwdg.de/pub/misc/cran/')
 }
 
-cran_pkg <- c('car', 'caret', 'corrplot', 'corrr', 'data.table', 'dplyr', 'drake', 'DT', 'embed',
+cran_pkg <- c('car', 'caret', 'corrplot', 'corrr', 'data.table', 'dplyr', 'drake', 'DT', 
     'funModeling', 'furrr', 'futile.logger', 'ggplot2', 'glue', 'klaR', 'knitr', 'MLmetrics', 'partykit', 'purrr',
     'randomForest', 'rBayesianOptimization', 'readr', 'recipes', 'rmarkdown', 'rsample', 'simTool',
     'skimr', 'SmartEDA', 'stringr', 'testthat', 'tictoc', 'tidyr', 'txtq', 'vtreat', 'visNetwork', 'xgboost')
