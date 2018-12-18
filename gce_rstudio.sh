@@ -20,6 +20,7 @@ echo "echo 'export EDITOR=emacs' >> /home/gce/.bashrc" | sudo bash
 echo "sudo cp -r /home/m/.ssh /home/gce/" | sudo bash
 echo "sudo chown -R gce:gce /home/gce/.ssh" | sudo bash
 
+echo "su gce -c \"R -e 'keras::install_keras()'\""  | sudo bash
 
 
 sudo su -c "mkdir /home/gce/projects" gce
