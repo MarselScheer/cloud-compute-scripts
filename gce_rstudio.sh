@@ -16,6 +16,7 @@ sudo gdebi -n $RSTUDIO
 
 sudo useradd -m gce
 sudo passwd gce
+sudo echo "export EDITOR=emacs" >> /home/gce/.bashrc
 
 sudo su -c "mkdir /home/gce/projects" gce
 echo "-------------------------------------"
