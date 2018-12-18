@@ -3,7 +3,7 @@ if (!require(pacman)) {
 }
 
 cran_pkg <- c('car', 'caret', 'corrplot', 'corrr', 'data.table', 'dplyr', 'drake', 'DT', 
-    'funModeling', 'furrr', 'futile.logger', 'ggplot2', 'glue', 'klaR', 'knitr', 'MLmetrics', 'partykit', 'purrr',
+    'funModeling', 'furrr', 'futile.logger', 'ggplot2', 'glue', 'keras', 'klaR', 'knitr', 'MLmetrics', 'partykit', 'purrr',
     'randomForest', 'rBayesianOptimization', 'readr', 'recipes', 'rmarkdown', 'rsample', 'simTool',
     'skimr', 'SmartEDA', 'stringr', 'testthat', 'tictoc', 'tidyr', 'tidytext', 'txtq', 'vtreat', 'visNetwork', 'xgboost')
 
@@ -14,7 +14,7 @@ if (any(!pkg_installed)) {
     cran_pkg[ !pkg_installed],
     character.only = TRUE,
     repos = 'https://ftp.gwdg.de/pub/misc/cran/',
-    Ncpus = 8
+    Ncpus = parallel::detectCores()
    )
 }
 
