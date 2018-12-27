@@ -16,12 +16,19 @@ sudo gdebi -n $RSTUDIO
 
 sudo useradd -m gce
 sudo passwd gce
+sleep 3
 echo "echo 'export EDITOR=emacs' >> /home/gce/.bashrc" | sudo bash
 echo "sudo cp -r /home/m/.ssh /home/gce/" | sudo bash
 echo "sudo chown -R gce:gce /home/gce/.ssh" | sudo bash
 
-echo "su gce -c \"R -e 'keras::install_keras()'\""  | sudo bash
 
+echo "Install keras..."
+sleep 3
+echo "su gce -c \"R -e 'keras::install_keras()'\""  | sudo bash
+echo "Moving the tensorflow installation that is made during the R-Keras installation because the vm-image already has TPU-optimized tensorflow installation"
+echo "mv /home/gce/.virtualenvs/r-tensorflow /home/gce/.virtualenvs/r-tensorflow.org"
+sleep 3
+sudo mv /home/gce/.virtualenvs/r-tensorflow /home/gce/.virtualenvs/r-tensorflow.org
 
 sudo su -c "mkdir /home/gce/projects" gce
 echo "-------------------------------------"
