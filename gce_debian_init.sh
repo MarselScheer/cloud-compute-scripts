@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Prepares an *Debian 9 + TF1-9* image on google cloud platform for R
+# Prepares an *Debian 9 + TF1-X* image on google cloud platform for R
 
 export LANG=en_US.UTF-8
 
@@ -23,13 +23,42 @@ echo "export EDITOR=emacs" >> ~/.bashrc
 
 sudo Rscript ./libs.R
 
+echo "Use 'gce' for R-projects"
+sleep 3
+
+sudo useradd -m gce
+sudo passwd gce
+sleep 3
+echo "echo 'export EDITOR=emacs' >> /home/gce/.bashrc" | sudo bash
+echo "sudo cp -r /home/m/.ssh /home/gce/" | sudo bash
+echo "sudo chown -R gce:gce /home/gce/.ssh" | sudo bash
+
+
+echo "Install keras for user 'gce' ..."
+sleep 3
+echo "su gce -c \"R -e 'keras::install_keras()'\""  | sudo bash
+echo "Moving the tensorflow installation that is made during the R-Keras installation because the vm-image already has TPU-optimized tensorflow installation"
+echo "mv /home/gce/.virtualenvs/r-tensorflow /home/gce/.virtualenvs/r-tensorflow.org"
+sleep 3
+sudo mv /home/gce/.virtualenvs/r-tensorflow /home/gce/.virtualenvs/r-tensorflow.org
+
+sudo su -c "mkdir /home/gce/projects" gce
+echo "-------------------------------------"
+echo "created a projects-folder for gce. Use rsync for downloading:"
+echo "rsync --dry-run --exclude 'foo' --exclude 'bar' -avrzhe ssh m@<IP>:/home/gce/projects /<DEST>"
+echo ""
+echo "in order to upload to /home/gce/projects add a public key to /home/gce/.ssh/authorized_keys and then"
+echo "rsync --dry-run --exclude 'foo' --exclude 'bar' -avrzhe ssh /<SRC> gce@<IP>:/home/gce/projects/ "
+
+
 source ./GIT_CONFIG
-echo "Set git user and email to:"
+echo "-------------------------------------"
+echo "Set git user and email for user -gce- to:"
 echo $GIT_NAME
 echo $GIT_EMAIL
-git config --global user.name $GIT_NAME
-git config --global user.email $GIT_EMAIL
-
+sudo su -c "git config --global user.name $GIT_NAME" gce
+sudo su -c "git config --global user.email $GIT_EMAIL" gce
+echo "-------------------------------------"
 
 echo "execute: source ~/.bashrc"
 
