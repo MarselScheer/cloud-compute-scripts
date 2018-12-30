@@ -23,7 +23,7 @@ echo "export EDITOR=emacs" >> ~/.bashrc
 
 sudo Rscript ./libs.R
 
-echo "Use 'gce' for R-projects"
+echo "Use -gce- for R-projects"
 sleep 3
 
 sudo useradd -m gce
@@ -34,7 +34,7 @@ echo "sudo cp -r /home/m/.ssh /home/gce/" | sudo bash
 echo "sudo chown -R gce:gce /home/gce/.ssh" | sudo bash
 
 
-echo "Install keras for user 'gce' ..."
+echo "Install keras for user -gce- ..."
 sleep 3
 echo "su gce -c \"R -e 'keras::install_keras()'\""  | sudo bash
 echo "Moving the tensorflow installation that is made during the R-Keras installation because the vm-image already has TPU-optimized tensorflow installation"
@@ -44,11 +44,10 @@ sudo mv /home/gce/.virtualenvs/r-tensorflow /home/gce/.virtualenvs/r-tensorflow.
 
 sudo su -c "mkdir /home/gce/projects" gce
 echo "-------------------------------------"
-echo "created a projects-folder for gce. Use rsync for downloading:"
-echo "rsync --dry-run --exclude 'foo' --exclude 'bar' -avrzhe ssh m@<IP>:/home/gce/projects /<DEST>"
-echo ""
-echo "in order to upload to /home/gce/projects add a public key to /home/gce/.ssh/authorized_keys and then"
-echo "rsync --dry-run --exclude 'foo' --exclude 'bar' -avrzhe ssh /<SRC> gce@<IP>:/home/gce/projects/ "
+echo "created a projects-folder for -gce-."
+echo "copy up.sh and down.sh to the corresponding project-folder, e.g. /home/gce/projects/foo/"
+echo "in order to easily sync the project with another machine"
+echo "in order to upload to /home/gce/projects add a public key to /home/gce/.ssh/authorized_keys"
 
 
 source ./GIT_CONFIG
