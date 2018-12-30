@@ -4,6 +4,13 @@
 
 export LANG=en_US.UTF-8
 
+echo "Use -gce- for R-projects"
+sleep 3
+
+sudo useradd -m gce
+sudo passwd gce
+sleep 3
+
 
 sudo ln -sf /usr/share/zoneinfo/GMT /etc/localtime
 
@@ -23,12 +30,6 @@ echo "export EDITOR=emacs" >> ~/.bashrc
 
 sudo Rscript ./libs.R
 
-echo "Use -gce- for R-projects"
-sleep 3
-
-sudo useradd -m gce
-sudo passwd gce
-sleep 3
 echo "echo 'export EDITOR=emacs' >> /home/gce/.bashrc" | sudo bash
 echo "sudo cp -r /home/m/.ssh /home/gce/" | sudo bash
 echo "sudo chown -R gce:gce /home/gce/.ssh" | sudo bash
