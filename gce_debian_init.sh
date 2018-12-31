@@ -21,7 +21,17 @@ sudo chmod 666 /etc/apt/sources.list
 sudo echo 'deb http://ftp.gwdg.de/pub/misc/cran/bin/linux/debian stretch-cran35/' >> /etc/apt/sources.list
 sudo chmod 644 /etc/apt/sources.list
 sudo apt-get install -y dirmngr libcurl4-openssl-dev libssl-dev
-sudo apt-key adv --keyserver keys.gnupg.net --recv-key 'E19F5F87128899B192B1A2C2AD5F960A256A04AF'
+
+n=0
+until [ $n -ge 20 ]
+do
+    sudo apt-key adv --keyserver keys.gnupg.net --recv-key 'E19F5F87128899B192B1A2C2AD5F960A256A04AF' && break
+    echo "Try $n: failed to fetch key for r-installation. Retry in 5 seconds"
+    n=$(expr $n + 1)
+    sleep 5
+done
+
+
 sudo apt-get update
 sudo apt-get install -y r-base r-base-dev
 
