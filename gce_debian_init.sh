@@ -5,7 +5,7 @@
 export LANG=en_US.UTF-8
 
 echo "Use -gce- for R-projects"
-sleep 3
+echo "User gce created. Set password for gce"
 
 sudo useradd -m gce
 sudo passwd gce
