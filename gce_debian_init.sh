@@ -71,3 +71,11 @@ echo "-------------------------------------"
 
 echo "execute: source ~/.bashrc"
 
+source ./PUSHBULLET
+
+if [ $PUSHBULLET_KEY != 'dummy' ]
+then
+    R -e "RPushbullet::pbPost(type = 'note', title = 'cloud-compute-script', body = 'gce_debian_init.sh done', apikey = '$PUSHBULLET_KEY', devices = '$PUSHBULLET_DEV', verbose = FALSE)"
+else
+    echo "No pushbullet key specified."
+fi

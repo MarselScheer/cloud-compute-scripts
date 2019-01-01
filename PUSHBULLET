@@ -1,0 +1,4 @@
+#!/bin/bash
+
+PUSHBULLET_KEY='dummy'
+PUSHBULLET_DEV='' # not necessary to specify
