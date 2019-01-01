@@ -4,7 +4,7 @@ if (!require(pacman)) {
 
 cran_pkg <- c('car', 'caret', 'corrplot', 'corrr', 'data.table', 'dplyr', 'drake', 'DT', 
     'funModeling', 'furrr', 'futile.logger', 'ggplot2', 'glue', 'keras', 'klaR', 'knitr', 'MLmetrics', 'partykit', 'purrr',
-    'randomForest', 'rBayesianOptimization', 'readr', 'recipes', 'rmarkdown', 'rsample', 'simTool',
+    'randomForest', 'rBayesianOptimization', 'readr', 'recipes', 'rmarkdown', 'RPushbullet', 'rsample', 'simTool',
     'skimr', 'SmartEDA', 'stringr', 'styler', 'testthat', 'tictoc', 'tidyr', 'tidytext', 'txtq', 'vtreat', 'visNetwork',
     'xgboost')
 
