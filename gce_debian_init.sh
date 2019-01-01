@@ -11,6 +11,9 @@ sudo useradd -m gce
 sudo passwd gce
 sleep 3
 
+echo "echo 'export EDITOR=emacs' >> /home/gce/.bashrc" | sudo bash
+echo "sudo cp -r /home/m/.ssh /home/gce/" | sudo bash
+echo "sudo chown -R gce:gce /home/gce/.ssh" | sudo bash
 
 sudo ln -sf /usr/share/zoneinfo/GMT /etc/localtime
 
@@ -39,10 +42,6 @@ sudo apt-get install -y htop ranger python-pip git tig emacs-nox pandoc ed ncdu
 echo "export EDITOR=emacs" >> ~/.bashrc
 
 sudo Rscript ./libs.R
-
-echo "echo 'export EDITOR=emacs' >> /home/gce/.bashrc" | sudo bash
-echo "sudo cp -r /home/m/.ssh /home/gce/" | sudo bash
-echo "sudo chown -R gce:gce /home/gce/.ssh" | sudo bash
 
 
 echo "Install keras for user -gce- ..."
